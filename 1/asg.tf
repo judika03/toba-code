@@ -1,7 +1,4 @@
 resource "aws_autoscaling_group" "worker" {
-  # Force a redeployment when launch configuration changes.
-  # This will reset the desired capacity if it was changed due to
-  # autoscaling events.
   name = "${aws_launch_configuration.worker.name}-asg"
 
   min_size             = 10
